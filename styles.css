@@ -1,0 +1,210 @@
+:root {
+    --red: #d10a0a;
+}
+
+body {
+    font-family: "PaladinRus", serif;
+    background-image: url("images/paper.jpg");
+    line-height: 1.6;
+}
+
+header,
+footer {
+    text-align: center;
+    color: var(--red);
+    padding: 2rem 3rem;
+}
+
+header {
+    .date {
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        -webkit-text-stroke: 1px black;
+        font-style: italic;
+        color: #fa0707;
+        border: 2px dashed black;
+        font-size: 1vw;
+    }
+}
+
+main {
+    .grid-item {
+        h2 {
+            font-size: 1em;
+        }
+
+        article {
+            &::first-letter {
+                initial-letter: 2 2;
+            }
+            font-size: 1em;
+        }
+    }
+
+    .pic {
+        text-align: center;
+
+        .image {
+            width: 100%;
+            max-width: 200px; /* Установите максимальную ширину */
+            height: auto; /* Поддержите пропорции */
+        }
+    }
+
+
+    .aside {
+        line-height: 0.9;
+        font-size: 4em;
+        word-break: break-all;
+    }
+
+    .header {
+        font-size: 3.2vw;
+
+        .center {
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+}
+
+@font-face {
+    font-family: PaladinRus;
+    src: url(fonts/ofont.ru_PaladinRus.ttf);
+}
+
+@font-face {
+    font-family: Gothic;
+    src: url(fonts/deutsch-gothic3.ttf);
+}
+
+body {
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: "Gothic", serif;
+    margin: 0 0 10px;
+}
+
+h1 {
+    -webkit-text-stroke: 1px #131f4a;
+    border-bottom: 3px solid black;
+    font-size: 2vw;
+}
+
+@media (width > 1200px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.4rem;
+        padding: 0 100px;
+    }
+
+    body {
+        max-width: 1960px;
+    }
+
+    .section-1 {
+        grid-column: span 0.5;
+    }
+
+    .section-3 {
+        grid-column: span 3;
+    }
+
+    .section-4 {
+        grid-column: span 4;
+    }
+
+    .section-12 {
+        grid-column: span 12;
+    }
+}
+@media (width <= 1200px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6 , 1fr);
+        gap: 0.5rem;
+        padding: 0 20px;
+    }
+    body {
+        max-width: 1000px;
+    }
+
+    .section-1 {
+        grid-column: span 0.5;
+    }
+
+    .section-3 {
+        grid-column: span 2;
+    }
+
+    .section-4 {
+        grid-column: span 3;
+    }
+
+
+    .section-12 {
+        grid-column: span 6;
+    }
+}
+
+@media (width <= 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0 20px;
+    }
+    body {
+        max-width: 600px;
+    }
+    .section-1 {
+        grid-column: span 1;
+    }
+
+    .section-3 {
+        grid-column: span 1;
+    }
+
+    .section-4 {
+        grid-column: span 1;
+    }
+
+
+    .section-12 {
+        grid-column: span 1;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 20mm;
+}
+
+@media print {
+    body {
+        color: black;
+        background: white;
+        font-size: 12pt;
+        margin: 0;
+        /*padding: 10px;*/
+        width: 100%;
+        max-width: 100%;
+        line-height: 1 !important;
+    }
+
+    header,
+    footer {
+        background: none;
+        color: black;
+    }
+
+    img {
+        animation: none;
+    }
+}
+
